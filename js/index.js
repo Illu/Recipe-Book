@@ -4,8 +4,8 @@ var RECIPES = [{
   "name": "Pancakes",
   "ingredients": ["flour", "milk", "eggs", "sugar", "butter"]
 }, {
-  "name": "Pastas",
-  "ingredients": ["pastas", "water"]
+  "name": "Pasta",
+  "ingredients": ["pasta", "water"]
 }];
 
 var STORAGE_NAME = "_Illusion_recipes";
