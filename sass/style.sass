@@ -1,11 +1,36 @@
+//compileCompressed: ../css/style.css
+
+$backgroundBlurLength: 140px
+$backgroundBlurColor: #444
+
+*
+  margin: 0
+  padding: 0
+  border: 0
+
+html body
+  height: 100%
+
+body
+  -moz-box-shadow: inset 0 0 $backgroundBlurLength $backgroundBlurColor
+  -webkit-box-shadow: inset 0 0 $backgroundBlurLength $backgroundBlurColor
+  box-shadow: inset 0 0 $backgroundBlurLength $backgroundBlurColor
+  background: rgb(232, 196, 185)
+
 #book
   margin-top: 20px
-  
+
 input
   margin-bottom: 20px
-  
+
 .ingredientsInput
   width: 90%
-  
+
 .deleteButton
   float: right
+
+p
+  padding: 20px
+
+h1
+  @extend p

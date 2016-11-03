@@ -4,7 +4,7 @@ var RECIPES = [{
   "name": "Pancakes",
   "ingredients": ["flour", "milk", "eggs", "sugar", "butter"]
 }, {
-  "name": "Pasta",
+  "name": "Pastas",
   "ingredients": ["pasta", "water"]
 }];
 
@@ -44,7 +44,7 @@ var AddButton = React.createClass({
               React.createElement(
                 "button",
                 { type: "button", className: "close", "data-dismiss": "modal" },
-                "×"
+                "\xD7"
               ),
               React.createElement(
                 "h4",
@@ -109,6 +109,7 @@ var DeleteButton = React.createClass({
 var EditButton = React.createClass({
   displayName: "EditButton",
 
+
   handleClick: function handleClick() {
     var recipeId = 'rEditName' + this.props.num;
     var ingredientsId = 'rEditIngredients' + this.props.num;
@@ -150,7 +151,7 @@ var EditButton = React.createClass({
               React.createElement(
                 "button",
                 { type: "button", className: "close", "data-dismiss": "modal" },
-                "×"
+                "\xD7"
               ),
               React.createElement(
                 "h4",
@@ -198,6 +199,7 @@ var EditButton = React.createClass({
 var Ingredients = React.createClass({
   displayName: "Ingredients",
 
+
   render: function render() {
     var nodes = this.props.data.map(function (ingredient) {
       return React.createElement(
@@ -216,6 +218,7 @@ var Ingredients = React.createClass({
 
 var Recipes = React.createClass({
   displayName: "Recipes",
+
 
   updateRecipe: function updateRecipe() {
     this.setState({ data: RECIPES });
@@ -307,3 +310,4 @@ var Recipes = React.createClass({
 });
 
 ReactDOM.render(React.createElement(Recipes, { data: RECIPES }), document.getElementById("book"));
+//# sourceMappingURL=/Users/maxime/Documents/GitHub/Recipe-Book/babel/index.js.map

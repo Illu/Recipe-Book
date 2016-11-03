@@ -3,7 +3,7 @@ var RECIPES = [{
       "ingredients": ["flour", "milk", "eggs", "sugar", "butter"]
     }, {
       "name": "Pastas",
-      "ingredients": ["pastas", "water"]
+      "ingredients": ["pasta", "water"]
     }];
 
 var STORAGE_NAME = "_Illusion_recipes";
@@ -58,30 +58,30 @@ var DeleteButton = React.createClass({
       <button onClick={this.handleClick} className="btn btn-danger deleteButton">Delete</button>
     );
   }
-  
+
 });
 
 var EditButton = React.createClass({
-  
+
   handleClick: function(){
     var recipeId = 'rEditName' + this.props.num;
     var ingredientsId = 'rEditIngredients' + this.props.num;
     var name = document.getElementById(recipeId).value;
     if (name.length <= 0)
       name = 'Unnamed recipe';
-    var ingredients = document.getElementById(ingredientsId).value.split(','); 
+    var ingredients = document.getElementById(ingredientsId).value.split(',');
     RECIPES[this.props.num - 1] = {"name": name, "ingredients": ingredients};
     this.props.updateRecipe();
   },
-  
+
    render: function(){
-     
+
      var idName = 'editModal' + this.props.num;
      var idFull = '#' + idName;
      var ingredients = this.props.recipe.ingredients.join(',');
      var recipeId = 'rEditName' + this.props.num;
      var ingredientsId = 'rEditIngredients' + this.props.num;
-     
+
     return (
       <div>
         <button className="btn btn-default" data-toggle="modal" data-target={idFull}>
@@ -113,7 +113,7 @@ var EditButton = React.createClass({
 });
 
 var Ingredients = React.createClass({
-  
+
   render: function(){
     var nodes = this.props.data.map(function(ingredient){
       return (<li className="list-group-item">{ingredient}</li>);
@@ -127,13 +127,13 @@ var Ingredients = React.createClass({
 });
 
 var Recipes = React.createClass({
-  
+
   updateRecipe: function(){
     this.setState({data: RECIPES});
   },
-  
+
   getInitialState: function() {
-    
+
     if (typeof(Storage) !== "undefined") {
       if (JSON.parse(localStorage.getItem(STORAGE_NAME)))
         {
@@ -143,17 +143,17 @@ var Recipes = React.createClass({
     } else {
       console.log("Web storage isn't supported on this browser");
     }
-    
+
     return {data: RECIPES}
   },
-  
+
   render: function(){
-    
+
     console.log(this.state.data)
     var num = 0;
     var parent = this;
     localStorage.setItem(STORAGE_NAME, JSON.stringify(RECIPES));
-    
+
     var nodes = this.state.data.map(function(recipe){
       var collapseName = 'collapse' + num;
       num++;
@@ -172,12 +172,12 @@ var Recipes = React.createClass({
                 <EditButton num={num} recipe={recipe} updateRecipe={parent.updateRecipe}/>
               </div>
             </div>
-            
+
         </div>
       </div>
       );
     })
-    
+
     return(
       <div className='container'>
         <div className='row'>
