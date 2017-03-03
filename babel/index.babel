@@ -1,3 +1,4 @@
+
 var RECIPES = [{
       "name": "Pancakes",
       "ingredients": ["flour", "milk", "eggs", "sugar", "butter"]
@@ -32,9 +33,9 @@ var AddButton = React.createClass({
               </div>
               <div className="modal-body">
                 <p>Choose a name for your recipe</p>
-                <input type="text" id="rName" placeholder="Name..."></input>
+                <input type="text" id="rName" placeholder="Name..." spellcheck="false"></input>
                 <p>Enter the ingredients for your recipe, separated by a comma</p>
-                <input type="text" id="rIngredients" className='ingredientsInput' placeholder="Ingredient 1, ingredient 2, ..."></input>
+                <input type="text" id="rIngredients" className='ingredientsInput' placeholder="Ingredient 1, ingredient 2, ..." spellcheck="false"></input>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
@@ -96,9 +97,9 @@ var EditButton = React.createClass({
               </div>
               <div className="modal-body">
                 <p>Change the name of the recipe</p>
-                <input type="text" id={recipeId} defaultValue={this.props.recipe.name}></input>
+                <input type="text" id={recipeId} defaultValue={this.props.recipe.name} spellcheck="false"></input>
                 <p>Change the ingredients for your recipe</p>
-                <input type="text" id={ingredientsId} className='ingredientsInput' defaultValue={ingredients}></input>
+                <input type="text" id={ingredientsId} className='ingredientsInput' defaultValue={ingredients} spellcheck="false"></input>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
