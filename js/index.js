@@ -288,7 +288,7 @@ var Recipes = React.createClass({
         React.createElement("div", { className: "col-xs-3" }),
         React.createElement(
           "div",
-          { className: "col-xs-6" },
+          { className: "col-xs-6 recipeList" },
           nodes
         )
       ),
