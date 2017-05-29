@@ -1,1 +1,0 @@
-This recipe book based on HTML5, CSS3 and javascript, using reactJS and Bootstrap. The recipes are stored locally.
