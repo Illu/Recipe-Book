@@ -44,7 +44,7 @@ var AddButton = React.createClass({
               React.createElement(
                 "button",
                 { type: "button", className: "close", "data-dismiss": "modal" },
-                "×"
+                "\xD7"
               ),
               React.createElement(
                 "h4",
@@ -60,13 +60,24 @@ var AddButton = React.createClass({
                 null,
                 "Choose a name for your recipe"
               ),
-              React.createElement("input", { type: "text", id: "rName", placeholder: "Name..." }),
+              React.createElement("input", {
+                type: "text",
+                id: "rName",
+                placeholder: "Name...",
+                spellcheck: "false"
+              }),
               React.createElement(
                 "p",
                 null,
                 "Enter the ingredients for your recipe, separated by a comma"
               ),
-              React.createElement("input", { type: "text", id: "rIngredients", className: "ingredientsInput", placeholder: "Ingredient 1, ingredient 2, ..." })
+              React.createElement("input", {
+                type: "text",
+                id: "rIngredients",
+                className: "ingredientsInput",
+                placeholder: "Ingredient 1, ingredient 2, ...",
+                spellcheck: "false"
+              })
             ),
             React.createElement(
               "div",
@@ -109,6 +120,7 @@ var DeleteButton = React.createClass({
 var EditButton = React.createClass({
   displayName: "EditButton",
 
+
   handleClick: function handleClick() {
     var recipeId = 'rEditName' + this.props.num;
     var ingredientsId = 'rEditIngredients' + this.props.num;
@@ -150,7 +162,7 @@ var EditButton = React.createClass({
               React.createElement(
                 "button",
                 { type: "button", className: "close", "data-dismiss": "modal" },
-                "×"
+                "\xD7"
               ),
               React.createElement(
                 "h4",
@@ -166,13 +178,25 @@ var EditButton = React.createClass({
                 null,
                 "Change the name of the recipe"
               ),
-              React.createElement("input", { type: "text", id: recipeId, defaultValue: this.props.recipe.name }),
+              React.createElement("input", {
+                type: "text",
+                id: recipeId,
+                defaultValue: this.props.recipe.name,
+                spellcheck: "false", placeholder: "Name..."
+              }),
               React.createElement(
                 "p",
                 null,
                 "Change the ingredients for your recipe"
               ),
-              React.createElement("input", { type: "text", id: ingredientsId, className: "ingredientsInput", defaultValue: ingredients })
+              React.createElement("input", {
+                type: "text",
+                id: ingredientsId,
+                className: "ingredientsInput",
+                defaultValue: ingredients,
+                spellcheck: "false",
+                placeholder: "Ingredient 1, ingredient 2, ..."
+              })
             ),
             React.createElement(
               "div",
@@ -198,6 +222,7 @@ var EditButton = React.createClass({
 var Ingredients = React.createClass({
   displayName: "Ingredients",
 
+
   render: function render() {
     var nodes = this.props.data.map(function (ingredient) {
       return React.createElement(
@@ -216,6 +241,7 @@ var Ingredients = React.createClass({
 
 var Recipes = React.createClass({
   displayName: "Recipes",
+
 
   updateRecipe: function updateRecipe() {
     this.setState({ data: RECIPES });
@@ -307,3 +333,4 @@ var Recipes = React.createClass({
 });
 
 ReactDOM.render(React.createElement(Recipes, { data: RECIPES }), document.getElementById("book"));
+//# sourceMappingURL=/Users/maxime/Documents/GitHub/Recipe-Book/babel/index.js.map
